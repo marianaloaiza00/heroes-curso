@@ -1,0 +1,19 @@
+<h1 class="text-center">Power List</h1>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Update At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let power of powers">
+      <td>{{ power.id }}</td>
+      <td>{{ power.name }}</td>
+      <td>{{ power.createdAt }}</td>
+      <td>{{ power.updatedAt }}</td>
+    </tr>
+  </tbody>
+</table>

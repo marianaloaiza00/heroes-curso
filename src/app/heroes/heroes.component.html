@@ -1,0 +1,21 @@
+<h1 class="text-center">Heroes</h1>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Alias</th>
+      <th scope="col">ID Power</th>
+      <th scope="col">Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <th scope="row">{{hero.id}}</th>
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.alias }}</td>
+      <td>{{ hero.power }}</td>
+      <td>{{ hero.powerName }}</td>
+    </tr>
+  </tbody>
+</table>
