@@ -8,4 +8,5 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'powers', component: PowersComponent },
+  { path: '**', component: DashboardComponent },
 ];
