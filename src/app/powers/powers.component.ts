@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Power } from './power';
 import { PowersService } from '../service/powers.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-powers',
@@ -10,12 +11,17 @@ import { PowersService } from '../service/powers.service';
 export class PowersComponent implements OnInit{
   powers : Power[] = []
 
-  constructor(private powerService: PowersService) { }
+  constructor(private powerService: PowersService,
+    private location: Location
+  ) { }
 
   ngOnInit():void {
     this.powerService.getPowers().subscribe((power) => {
       this.powers = power;
-      console.log(this.powers);
-  }) ;
+    }) ;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

@@ -3,7 +3,7 @@ import { HeroesService } from '../service/heroes.service';
 import { Hero } from './heroes';
 import { PowersService } from '../service/powers.service';
 import { forkJoin, map } from 'rxjs';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 interface HeroWithPowerName extends Hero {
   powerName: string;
@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroesService,
     private powerService: PowersService,
-    private router: Router
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class HeroesComponent implements OnInit {
       });
   }
 
-  powerList(): void {
-    this.router.navigate(['/powers']);
+  goBack(): void {
+   this.location.back();
   }
 }
